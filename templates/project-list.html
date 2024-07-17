@@ -1,0 +1,94 @@
+
+{% load static %}
+{% include 'header.html' %}
+
+
+    <!-- Page Main -->
+    <main id="bringer-main">
+        <div class="stg-container">
+            <!-- Section: Page Title -->
+            <section class="backlight-bottom">
+                <div class="stg-row">
+                    <div class="stg-col-8 stg-offset-2">
+                        <div class="align-center">
+                            <h1 class="bringer-page-title" data-appear="fade-up" data-unload="fade-up">Our Projects</h1>
+                            <p class="bringer-large-text" data-appear="fade-up" data-delay="100" data-unload="fade-up">Where Creative Sparks Ignite Branding Revolutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Portfolio Listing -->
+            <section>
+                
+                <!-- Project Card Start -->
+                 {% if projects %}
+                    {% for i in projects %}
+                    <div class="bringer-column-item bringer-masked-block" data-unload="fade-up">
+                        <!-- Media -->
+                        <div class="bringer-masked-media bringer-parallax-media" data-appear="fade-up" data-threshold="0">
+                            <img class="bringer-lazy" src="{{i.image_one.url}}" data-src="{{i.image_two.url}}" alt="" width="1920" height="1280">
+                        </div>
+                        <!-- Content -->
+                        <div class="bringer-masked-content at-bottom-center">
+                            <div class="bringer-column-item-content">
+                                <div class="bringer-column-item-title">
+                                    <span class="bringer-meta">{{i.category.name}}</span>
+                                    <h4>{{i.meta_title}}</h4>
+                                </div>
+                                <div class="bringer-icon-wrap">
+                                    <span class="bringer-icon bringer-icon-explore"></span>
+                                </div>
+                                <a href="/projects/{{i.slug}}"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            {% endif %}
+
+                <!-- Project card End  -->
+                                
+             
+            </section>
+
+            <section class="backlight-top">
+                <div class="bringer-bento-grid bringer-grid-cta">
+                    <div class="is-large bringer-masked-block" data-appear="fade-right" data-unload="fade-left">
+                        <div class="bringer-grid-cta-media bringer-masked-media" data-bg-src="img/cta/grid-cta-background.jpg">
+                            <div class="bringer-grid-cta-heading">Need to Amplify Your Digital Presence?</div>
+                        </div>
+                        <div class="bringer-masked-content at-bottom-right">
+                            <p class="bringer-large-text" data-appear="fade-right" data-delay="100">Let's chat about your goals &rarr;</p>
+                        </div>
+                    </div>
+                    <div class="is-medium bringer-block" data-appear="fade-down" data-unload="fade-right">
+                        <p>At PythonCoding4U, we're here to help you make a significant impact in the digital world. Whether you need a compelling website, a robust e-commerce platform, cutting-edge AI/ML solutions, or a dynamic mobile app, we have the expertise to elevate your brand and enhance your digital footprint.</p>
+                    </div>
+                    <div class="is-small" data-appear="zoom-out" data-delay="100" data-unload="zoom-out">
+                        <a href="https://wa.me/918603862290" class="bringer-square-button">
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </a>
+                    </div>
+                    <div class="is-small" data-appear="zoom-out" data-delay="200" data-unload="zoom-out">
+                        <img src="{% static 'img/cta/grid-cta-02.jpg' %}" alt="Let's Chat" width="960" height="960">
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- .stg-container -->
+
+    
+
+
+        {% include 'footer.html' %}
+
+
+        <script>
+
+            $('#home').removeClass('current-menu-parent');
+            $("#project").addClass('current-menu-parent');
+
+        </script>
+
+        

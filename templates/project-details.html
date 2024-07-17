@@ -1,0 +1,369 @@
+
+
+
+{% load static %}
+{% include 'header.html' %}
+
+
+<style>
+
+.immmmg{
+    padding-left: 200px; padding-right: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+    .immmmg{
+    padding-left: 10px; padding-right: 10px;
+}
+}
+
+
+@media only screen and (max-width: 960px) {
+    body .tp-align-right {
+        text-align: left;
+    }
+
+}
+
+
+</style>
+
+
+
+
+    <!-- Page Main -->
+    <main id="bringer-main">
+        <div class="stg-container">
+            <!-- Section: Page Title -->
+            <section class="backlight-bottom">
+                <div class="stg-row stg-bottom-gap-l">
+                    <div class="stg-col-8 stg-tp-bottom-gap" data-appear="fade-right" data-unload="fade-left">
+                        <h2>{{projects.meta_title}}</h2>
+                    </div>
+                    <div class="stg-col-4 stg-tp-col-8 stg-tp-offset-4 tp-align-right stg-m-col-9 " data-appear="fade-left" data-unload="fade-right">
+                        <p>{{projects.meta_description}}</p>
+                    </div>
+                </div>
+
+                <!-- Slider -->
+                <div class="bringer-slider-wrapper bringer-masked-block stg-bottom-gap" data-appear="fade-up" data-delay="100" data-unload="fade-up">
+                    <div class="swiper bringer-slider bringer-masked-media" data-autoplay="2000" data-duration="800" data-effect="slide">
+                        <div class="swiper-wrapper">
+                            <!-- Slider Item -->
+                            <div class="swiper-slide">
+                                <img src="{{projects.image_two.url}}" alt="Gaming Power" width="1920" height="1080">
+                            </div>
+                            <!-- Slider Item -->
+                            <div class="swiper-slide">
+                                <img src="{{projects.image_three.url}}" alt="Gaming Power" width="1920" height="1080">
+                            </div>
+                            
+                        </div>
+                    </div><!-- .bringer-slider -->
+                    <!-- Masked Navigation -->
+                    <div class="bringer-slider-nav bringer-masked-content at-bottom-right">
+                        <a href="#" class="bringer-slider-prev">
+                            <span class="bringer-icon bringer-icon-chevron-left"></span>
+                        </a>
+                        <a href="#" class="bringer-slider-next">
+                            <span class="bringer-icon bringer-icon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Meta -->
+                <div class="bringer-hero-info-line" data-stagger-appear="fade-up" data-delay="200" data-unload="fade-up">
+                    <div class="bringer-meta">
+                        Category: <span>{{projects.category}}</span>
+                    </div>
+                    <!-- <div class="bringer-meta">
+                        Service: <span>Marketing</span>
+                    </div>
+                    <div class="bringer-meta">
+                        Date: <span>October '2023</span>
+                    </div> -->
+                </div><!-- .bringer-hero-info-line -->
+            </section>
+
+
+
+
+             <!-- Section: Solution -->
+             <section>
+                <p class="bringer-large-text">{{projects.long_description | safe}}</p>
+                <div class="stg-row">
+                    <!-- <div class="stg-col-12 stg-tp-bottom-gap-l" data-appear="fade-right" data-unload="fade-left">
+                        <h2></h2>
+                    </div> -->
+                    <div class="stg-col-12 stg-tp-col-12 stg-tp-offset-12 stg-m-col-12 stg-m-offset-12" data-appear="fade-left" data-unload="fade-right">
+                        
+                        
+                       
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+            <!-- Section: The Challenge -->
+            <section>
+                <div class="stg-row">
+                    <div class="stg-col-6 stg-tp-bottom-gap-l" data-unload="fade-left">
+                        <div class="bringer-sticky-block">
+                            <h2 data-appear="fade-right">Project Features</h2>
+                        </div>
+                    </div>
+                    <div class="stg-col-6 stg-tp-col-10 stg-tp-offset-2 stg-m-col-11 stg-m-offset-1" data-unload="fade-right">
+
+
+                       
+                        {% for feature in projects.features.all %}
+                            <div class="stg-bottom-gap-section stg-tp-bottom-gap-l" data-appear="fade-up">
+                                <h4>{{feature.title}}</h4>
+                                <p>{{feature.description}}</p>
+                            </div>
+                        {% endfor %}
+                       
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Gallery -->
+            <section data-tp-padding="none">
+                <div class="bringer-grid-12cols" data-stagger-appear="fade-up" data-stagger-unload="fade-left">
+                    <div style="text-align: center;">
+                        <img class="bringer-lazy immmmg"  src="{{projects.image_one.url}}" data-src="{{projects.image_one.url}}" alt="Gaming Power" data-speed="0.9" data-m-speed="1" width="100%" >
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+            <!-- Section: The Challenge -->
+            <section>
+                <div class="stg-row">
+                    <div class="stg-col-6 stg-tp-bottom-gap-l" data-unload="fade-left">
+                        <div class="bringer-sticky-block">
+                            <h2 data-appear="fade-right">Applications</h2>
+                        </div>
+                    </div>
+                    <div class="stg-col-6 stg-tp-col-10 stg-tp-offset-2 stg-m-col-11 stg-m-offset-1" data-unload="fade-right">
+
+
+                       
+                        {% for feature in projects.Applications.all %}
+                            <div class="stg-bottom-gap-section stg-tp-bottom-gap-l" data-appear="fade-up">
+                                <h4>{{feature.title}}</h4>
+                                <p>{{feature.description}}</p>
+                            </div>
+                        {% endfor %}
+                       
+                        
+                    </div>
+                </div>
+            </section>
+
+
+
+            
+           
+           
+
+            <section data-padding="none" data-unload="zoom-out">
+                <div class="bringer-expand-on-scroll" id="video-container">
+                   
+                    <!-- <iframe class="bringer-laz" width="1920" height="960" src="https://www.youtube.com/embed/eHr4-jGj5oQ" frameborder="0" allowfullscreen></iframe> -->
+
+
+                </div><!-- .bringer-expand-on-scroll -->
+            </section>
+
+
+
+            
+            <!-- Section: Results & Impact -->
+            <!-- <section>
+                <div class="stg-row">
+                    <div class="stg-col-6 stg-offset-6 stg-tp-col-10 stg-tp-offset-2" data-unload="fade-right">
+                        <h4 data-appear="fade-up">Beyond Gaming</h4>
+                        <p data-appear="fade-up" data-delay="100">Our journey with Xbox taught us that success knows no gravity. Whether your brand is navigating the uncharted expanse of a new market or simply needs a course correction, Bringer has the fuel and the ingenuity to propel you to unimaginable heights.</p>
+                    </div>
+                </div>
+            </section> -->
+
+
+            <section class="backlight-top">
+                <div class="bringer-bento-grid bringer-grid-cta">
+                    <div class="is-large bringer-masked-block" data-appear="fade-right" data-unload="fade-left">
+                        <div class="bringer-grid-cta-media bringer-masked-media" data-bg-src="img/cta/grid-cta-background.jpg">
+                            <div class="bringer-grid-cta-heading">Need to amplify your voice?</div>
+                        </div>
+                        <div class="bringer-masked-content at-bottom-right">
+                            <p class="bringer-large-text" data-appear="fade-right" data-delay="100">Let's chat about your goals &rarr;</p>
+                        </div>
+                    </div>
+                    <div class="is-medium bringer-block" data-appear="fade-down" data-unload="fade-right">
+                        <h3>We will design campaigns that make the world listen</h3>
+                    </div>
+                    <div class="is-small" data-appear="zoom-out" data-delay="100" data-unload="zoom-out">
+                        <a href="https://wa.me/918603862290" class="bringer-square-button">
+                            <span class="bringer-icon bringer-icon-explore"></span>
+                        </a>
+                    </div>
+                    <div class="is-small" data-appear="zoom-out" data-delay="200" data-unload="zoom-out">
+                        <img src="{%  static 'img/cta/grid-cta-02.jpg' %}" alt="Let's Chat" width="960" height="960">
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <!-- Section: Next Post -->
+            <section class="divider-top" data-appear="fade-up">
+                <!-- <div class="align-center" data-unload="zoom-in">
+                    <a href="portfolio-post04.html" class="bringer-icon-link bringer-next-post">
+                        <div class="bringer-icon-link-content">
+                            <h6>Next Project</h6>
+                            <h2>Riot Energy</h2>
+                        </div>
+                        <div class="bringer-icon-wrap">
+                            <i class="bringer-icon bringer-icon-explore"></i>
+                        </div>
+                    </a>
+                </div> -->
+
+
+                <!-- <main id="bringer-main">
+                  
+                    <div class="bringer-infinite-list-wrap">
+                    
+                        <div class="bringer-infinite-list">
+            
+                            <div class="bringer-infinite-list-item">
+                                <div class="bringer-infinite-list-preview">
+                                    <img src="img/portfolio/portfolio01.jpg" alt="">
+                                </div>
+                                <div class="bringer-infinite-list-title">
+                                    <span class="bringer-meta">Branding</span>
+                                    <h2>Curology</h2>
+                                </div>
+                                <div class="bringer-infinite-list-icon">
+                                    <span class="bringer-icon bringer-icon-explore"></span>
+                                </div>
+                                <a href="portfolio-post01.html"></a>
+                            </div>
+
+                            <div class="bringer-infinite-list-item">
+                                <div class="bringer-infinite-list-preview">
+                                    <img src="img/portfolio/portfolio01.jpg" alt="">
+                                </div>
+                                <div class="bringer-infinite-list-title">
+                                    <span class="bringer-meta">Branding</span>
+                                    <h2>Curology</h2>
+                                </div>
+                                <div class="bringer-infinite-list-icon">
+                                    <span class="bringer-icon bringer-icon-explore"></span>
+                                </div>
+                                <a href="portfolio-post01.html"></a>
+                            </div>
+
+
+                            <div class="bringer-infinite-list-item">
+                                <div class="bringer-infinite-list-preview">
+                                    <img src="img/portfolio/portfolio01.jpg" alt="">
+                                </div>
+                                <div class="bringer-infinite-list-title">
+                                    <span class="bringer-meta">Branding</span>
+                                    <h2>Curology</h2>
+                                </div>
+                                <div class="bringer-infinite-list-icon">
+                                    <span class="bringer-icon bringer-icon-explore"></span>
+                                </div>
+                                <a href="portfolio-post01.html"></a>
+                            </div>
+
+                            <div class="bringer-infinite-list-item">
+                                <div class="bringer-infinite-list-preview">
+                                    <img src="img/portfolio/portfolio01.jpg" alt="">
+                                </div>
+                                <div class="bringer-infinite-list-title">
+                                    <span class="bringer-meta">Branding</span>
+                                    <h2>Curology</h2>
+                                </div>
+                                <div class="bringer-infinite-list-icon">
+                                    <span class="bringer-icon bringer-icon-explore"></span>
+                                </div>
+                                <a href="portfolio-post01.html"></a>
+                            </div>
+                        </div>
+                    </div>
+                </main> -->
+
+
+
+                
+            </section>
+
+
+
+
+
+            
+        </div><!-- .stg-container -->
+
+    
+
+        {% include 'footer.html' %}
+
+
+        <script>
+
+            $(document).ready(function() {
+                $('#home').removeClass('current-menu-parent');
+                $("#project").addClass('current-menu-parent');
+    
+                // Fetch the YouTube link from the database or API
+                var youtubeLink = "{{projects.youtube_link}}";
+                console.log("video link: ", youtubeLink);
+    
+                var videoID = null;
+    
+                // Check if the link is a shortened URL (youtu.be) or a standard YouTube URL
+                if (youtubeLink.includes('youtu.be/')) {
+                    videoID = youtubeLink.split('youtu.be/')[1];
+                } else if (youtubeLink.includes('v=')) {
+                    videoID = youtubeLink.split('v=')[1].split('&')[0];
+                }
+    
+                console.log("Video Id: ", videoID);
+    
+                if (videoID) {
+                    // Create the iframe element
+                    var iframe = $('<iframe>', {
+                        
+                        src: "https://www.youtube.com/embed/" + videoID,
+                        frameborder: 0,
+                        allowfullscreen: true,
+                        class: "bringer-lazy"
+                    });
+    
+                    // Insert the iframe into the container
+                    $('#video-container').append(iframe);
+                } else {
+                    console.error("Failed to extract video ID.");
+                }
+            });
+           
+
+        </script>

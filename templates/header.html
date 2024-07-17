@@ -1,0 +1,227 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Pythoncoding4u</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+    <!-- Config -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/config.css' %}">
+    <!-- Libraries -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/libs.css' %}">
+    <!-- Template Styles -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Responsive -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" sizes="32x32">
+
+    <style>
+
+        .whatapp-img{
+            z-index: 99;
+            width: 50px;
+            bottom: 25px;
+            position: fixed;
+            left: 25px;
+            animation: jump 0.5s linear infinite;
+            z-index: 9999;
+        }
+
+        @keyframes jump {
+
+            0%{
+                transform: scale(1.1);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+
+            100%{
+                transform: scale(1.1);
+            }
+            
+        }
+
+        
+        .full-desktop{
+                width: 100%;
+                height: 100vh;
+                position: fixed;
+                background-color: rgba(0, 0, 0, 0.866);
+                z-index: 999;
+                transition: ease-in-out 0.5s;
+                display:none;
+            }
+
+            .form-box{
+                width: 30%;
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: ease-in-out 0.5s;
+            }
+
+            .close-buttion{
+                position: absolute;
+                right: 20px;
+                top : 10px;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            @media only screen and (max-width: 600px) {
+            .whatapp-img{
+            bottom: 10px;
+            left: 10px;
+            }
+            .form-box{
+                    width: 90%;
+                }
+
+        }
+
+
+
+
+       
+
+
+    </style>
+
+
+
+</head>
+<body>
+   
+    
+
+
+
+    <!-- Header -->
+    <header id="bringer-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">
+        <!-- Desktop Header -->
+        <div class="bringer-header-inner">
+            <!-- Header Logo -->
+            <div class="bringer-header-lp">
+                <a href="{% url 'home' %}" class="bringer-logo">
+                    <img src="{% static 'img/logo.png' %}" alt="bringer." width="180" height="24">
+                </a>
+            </div>
+            <!-- Main Menu -->
+            <div class="bringer-header-mp">
+                <nav class="bringer-nav">
+                    <ul class="main-menu" data-stagger-appear="fade-down" data-stagger-delay="75">
+                        <li id="home" class="current-menu-parent">
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li id="about">
+                            <a href="{% url 'about' %}">About Us</a>
+                        </li>
+                        <li id="project">
+                            <a href="{% url 'projects' %}">Projects</a>
+                        </li>
+                        
+                        <li id="service">
+                            <a href="{% url 'services' %}">Services</a>
+                        </li>
+
+                        <li id="blog">
+                            <a href="{% url 'blogs' %}">Blogs</a>
+                        </li>
+
+                        <li id="contact">
+                            <a href="{% url 'contact' %}">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Header Button -->
+            <div class="bringer-header-rp">
+                <a id="getquote" class="bringer-button">Get a FREE Quote</a>
+            </div>
+        </div>
+        <!-- Mobile Header -->
+        <div class="bringer-mobile-header-inner">
+            <a href="{% url 'home' %}" class="bringer-logo">
+                <img src="{% static 'img/logo.png' %}" alt="bringer." width="160" height="24">
+            </a>
+            <a href="#" class="bringer-mobile-menu-toggler">
+                <i class="bringer-menu-toggler-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </i>
+            </a>
+        </div>
+    </header>
+
+
+    <a href="https://wa.me/918603862290">
+        <img src="{% static '/img/whatapp.png' %}" class="whatapp-img">
+    </a>
+
+
+
+
+
+
+    <!-- popup form  -->
+       
+
+        <div class="full-desktop" id="fulldisplay">
+            <div class="form-box">
+
+                
+
+
+                <form id="contactForm1" class="bringer-contact-form bringer-block" method="post" action="{% url 'contact_form' %}" data-fill-error="Please, fill out the contact form." data-appear="fade-right" data-threshold="0.25">
+                    <p class="close-buttion" id="closebtn">x</p>
+                    <div class="bringer-form-content">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="email@example.com" required>  
+                        
+                        <label for="phone">Your Phone No.</label>
+                        <input type="text" id="phone" name="phone" placeholder="+918603862290" required>    
+                        
+                        <label style="display:none;" for="message">Your Message</label>
+                        <textarea style="display:none;" id="message" name="message" placeholder="Your Message" >Submit from Popup Form</textarea>
+                        
+                        <button id="submitButton1" type="submit">Get a FREE Quote</button>
+                    </div>
+                    <div  id="responseMessage1" ></div>
+                </form>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+        
+
+
+
+
+    <!-- popupform End -->
+
+<!-- Header End -->
+
