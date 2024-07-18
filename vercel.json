@@ -30,5 +30,5 @@
   "env": {
     "DJANGO_SETTINGS_MODULE": "pythoncoding4u.settings"
   },
-  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+  "buildCommand": "python manage.py collectstatic --noinput && pip install -r requirements.txt"
 }
