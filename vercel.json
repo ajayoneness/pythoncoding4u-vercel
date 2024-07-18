@@ -5,13 +5,6 @@
       "src": "pythoncoding4u/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    },
-    {
-      "src": "build_files.sh",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "staticfiles"
-      }
     }
   ],
   "routes": [
@@ -23,5 +16,9 @@
       "src": "/(.*)",
       "dest": "pythoncoding4u/wsgi.py"
     }
-  ]
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "pythoncoding4u.settings"
+  },
+  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput"
 }
