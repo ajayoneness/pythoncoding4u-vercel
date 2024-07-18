@@ -141,13 +141,18 @@ USE_I18N = True
 USE_TZ = True
 
 
+
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 
+# Directory where collectstatic will collect static files for deployment
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# Additional directories to look for static files
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
