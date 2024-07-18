@@ -10,7 +10,7 @@
       "src": "build_files.sh",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "staticfiles_build"
+        "distDir": "staticfiles"
       }
     }
   ],
@@ -23,8 +23,5 @@
       "src": "/(.*)",
       "dest": "pythoncoding4u/wsgi.py"
     }
-  ],
-  "env": {
-    "DJANGO_SETTINGS_MODULE": "pythoncoding4u.settings"
-  }
+  ]
 }
