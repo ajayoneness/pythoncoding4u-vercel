@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 # Model for Service Process
 class ServiceProcess(models.Model):
     image = models.ImageField(upload_to='service_process/')
@@ -14,8 +13,7 @@ class ServiceProcess(models.Model):
 
     def __str__(self):
         return self.title
-
-
+    
 
 # Model for Service
 class Service(models.Model):
