@@ -10,7 +10,7 @@ SECRET_KEY = 'django-insecure-9sz55stx(x-6n+kccd9o03sfi-a-r3aubcu%y9m#!hc(u3%6oj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pythoncoding.codeajay.in','www.pythoncoding.codeajay.in','.vercel.app','now.sh','127.0.0.1','localhost','codeajay.in']
+ALLOWED_HOSTS = ['pythoncoding.codeajay.in','www.pythoncoding.codeajay.in','.vercel.app','.now.sh','127.0.0.1','localhost','codeajay.in']
 # ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1,[::1]").split(",")
 
 
@@ -146,7 +146,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
 
