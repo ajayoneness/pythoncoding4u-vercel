@@ -106,7 +106,7 @@
 
                 
 
-
+                {% if blogs.code %}
                 <div class="stg-row" data-appear="fade-up" data-unload="zoom-out">
                     <div class="stg-col-12 stg-offset-0 stg-tp-col-12 stg-tp-offset-2">
                         <!-- <img class="bringer-lazy" src="img/null.png" data-src="img/portfolio/portfolio01/image01.jpg" alt="Curology" width="1200" height="1200"> -->
@@ -118,6 +118,7 @@
                          </div>
                     </div>
                 </div>
+                {% endif %}
 
 
 
@@ -136,7 +137,7 @@
 
                     {% for i in blogs.process.all %}
                     <div class="stg-col-12 stg-offset-0 stg-tp-col-12 stg-tp-offset-0">
-                        <p style="margin-bottom: 5px;">STEP</p>
+                        <p style="margin-bottom: 5px;">STEP {{i.stepno}}</p>
                         <h6  class="bringer-large-text" style="">{{i.title}}</h6>
                         <p>
                             {{i.description}}

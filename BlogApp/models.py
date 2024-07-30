@@ -11,6 +11,7 @@ class BlogCategory(models.Model):
     
 
 class Steps(models.Model):
+    stepno = models.CharField(max_length=255,blank=True, null=True)
     image = models.ImageField(upload_to='blog_steps/',blank=True, null=True)
     title = models.CharField(max_length=255,blank=True, null=True)
     description = models.TextField(blank=True, null=True)
